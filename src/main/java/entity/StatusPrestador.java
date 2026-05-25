@@ -1,13 +1,9 @@
 package entity;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 @Entity
 @Table(name = "status_prestador")
-@Getter @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class StatusPrestador {
 
     @Id
@@ -20,4 +16,37 @@ public class StatusPrestador {
 
     @Column(columnDefinition = "TEXT")
     private String descricao;
+
+    public StatusPrestador() {
+    }
+
+    public StatusPrestador(Integer id, String nomeStatus, String descricao) {
+        this.id = id;
+        this.nomeStatus = nomeStatus;
+        this.descricao = descricao;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNomeStatus() {
+        return nomeStatus;
+    }
+
+    public void setNomeStatus(String nomeStatus) {
+        this.nomeStatus = nomeStatus;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 }

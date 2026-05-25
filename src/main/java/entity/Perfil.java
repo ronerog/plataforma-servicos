@@ -1,13 +1,8 @@
 package entity;
 
 import jakarta.persistence.*;
-import lombok.*;
 
 @MappedSuperclass
-@Getter @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-
 public abstract class Perfil {
 
     @OneToOne(fetch = FetchType.LAZY)
@@ -17,4 +12,28 @@ public abstract class Perfil {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_endereco", nullable = false)
     private Endereco endereco;
+
+    public Perfil() {
+    }
+
+    public Perfil(Usuario usuario, Endereco endereco) {
+        this.usuario = usuario;
+        this.endereco = endereco;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 }

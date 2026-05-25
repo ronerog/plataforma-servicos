@@ -2,14 +2,11 @@ package entity;
 
 import enums.Genero;
 import jakarta.persistence.*;
-import lombok.*;
+
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "perfil_cidadao")
-@Getter @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class PerfilCidadao extends Perfil {
 
     @Id
@@ -32,4 +29,69 @@ public class PerfilCidadao extends Perfil {
 
     @Column(name = "foto_perfil", length = 500)
     private String fotoPerfil;
+
+    public PerfilCidadao() {
+    }
+
+    public PerfilCidadao(Integer id, String cpf, String nome,
+                         LocalDate dataNascimento, Genero genero,
+                         String fotoPerfil, Usuario usuario, Endereco endereco) {
+
+        super(usuario, endereco);
+
+        this.id = id;
+        this.cpf = cpf;
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.genero = genero;
+        this.fotoPerfil = fotoPerfil;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+    public String getFotoPerfil() {
+        return fotoPerfil;
+    }
+
+    public void setFotoPerfil(String fotoPerfil) {
+        this.fotoPerfil = fotoPerfil;
+    }
 }

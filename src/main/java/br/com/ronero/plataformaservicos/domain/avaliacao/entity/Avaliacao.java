@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "br/com/ronero/plataformaservicos/domain/avaliacao")
+@Table(name = "avaliacao")
 public class Avaliacao {
 
     @Id
@@ -38,7 +38,7 @@ public class Avaliacao {
     @Column(name = "data_avaliacao", nullable = false)
     private LocalDate dataAvaliacao = LocalDate.now();
 
-    @OneToMany(mappedBy = "br/com/ronero/plataformaservicos/domain/avaliacao", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "avaliacao", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AvaliacaoFoto> fotos = new ArrayList<>();
 
     public Avaliacao() {}

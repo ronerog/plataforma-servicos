@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "br/com/ronero/plataformaservicos/domain/servico")
+@Table(name = "servico")
 public class Servico {
 
     @Id
@@ -32,7 +32,7 @@ public class Servico {
     @JoinColumn(name = "id_status_servico", nullable = false)
     private StatusServico statusServico;
 
-    @OneToMany(mappedBy = "br/com/ronero/plataformaservicos/domain/servico", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "servico", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ServicoFoto> fotos = new ArrayList<>();
 
     public Servico() {}

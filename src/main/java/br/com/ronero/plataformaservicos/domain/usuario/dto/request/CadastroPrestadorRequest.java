@@ -1,4 +1,4 @@
-package br.com.ronero.plataformaservicos.domain.usuario.dto;
+package br.com.ronero.plataformaservicos.domain.usuario.dto.request;
 
 import jakarta.validation.constraints.*;
 
@@ -28,7 +28,6 @@ public class CadastroPrestadorRequest {
     @Pattern(regexp = "\\d{10,11}", message = "WhatsApp inválido")
     private String whatsapp;
 
-    // Endereço
     @NotBlank(message = "CEP é obrigatório")
     @Pattern(regexp = "\\d{5}-\\d{3}", message = "CEP inválido")
     private String cep;

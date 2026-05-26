@@ -36,17 +36,17 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @GetMapping("/cidadaos")
+    @GetMapping(value = "/cidadaos", produces = "application/json")
     public ResponseEntity<List<PerfilCidadaoResponse>> listarCidadaos() {
         return ResponseEntity.ok(usuarioService.listarCidadaos());
     }
 
-    @GetMapping("/prestadores")
+    @GetMapping(value = "/prestadores", produces = "application/json")
     public ResponseEntity<List<PerfilPrestadorResponse>> listarPrestadores() {
         return ResponseEntity.ok(usuarioService.listarPrestadores());
     }
 
-    @GetMapping("/cidadao/{idUsuario}")
+    @GetMapping(value = "/cidadao/{idUsuario}", produces = "application/json")
     public ResponseEntity<PerfilCidadaoResponse> buscarCidadao(@PathVariable Integer idUsuario) {
         return ResponseEntity.ok(usuarioService.buscarCidadaoPorUsuario(idUsuario));
     }

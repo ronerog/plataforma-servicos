@@ -1,4 +1,4 @@
-package enums;
+package br.com.ronero.plataformaservicos.shared.enums;
 
 public enum Genero {
     MASCULINO,

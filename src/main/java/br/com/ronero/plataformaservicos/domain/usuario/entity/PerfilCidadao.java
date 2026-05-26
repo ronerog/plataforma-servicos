@@ -1,6 +1,6 @@
-package entity;
+package br.com.ronero.plataformaservicos.domain.usuario.entity;
 
-import enums.Genero;
+import br.com.ronero.plataformaservicos.shared.enums.Genero;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

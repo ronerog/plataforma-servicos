@@ -1,4 +1,4 @@
-package entity;
+package br.com.ronero.plataformaservicos.domain.usuario.entity;
 
 import jakarta.persistence.*;
 

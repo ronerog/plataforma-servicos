@@ -1,6 +1,6 @@
-package entity;
+package br.com.ronero.plataformaservicos.domain.usuario.entity;
 
-import enums.Role;
+import br.com.ronero.plataformaservicos.shared.enums.Role;
 import jakarta.persistence.*;
 
 @Entity
